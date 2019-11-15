@@ -6,7 +6,10 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-    "cyberway-core-service": "^3.54.2"
+    "cyberway-core-service": "^3.54.2",
+    "ioredis": "^4.14.1",
+    "node-fetch": "^2.6.0",
+    "normalize-url": "^4.5.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

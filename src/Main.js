@@ -8,6 +8,7 @@ class Main extends BasicMain {
     constructor() {
         super(env);
         const connector = new Connector();
+
         this.addNested(connector);
     }
 }

@@ -13,7 +13,8 @@ services:
       - $GLS_METRICS_HOST:$GLS_METRICS_PORT:$GLS_METRICS_PORT
     env_file:
       - .env
-  redis:
+  embeds-redis:
+    container_name: embeds-redis
     image: 'bitnami/redis:5.0'
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.

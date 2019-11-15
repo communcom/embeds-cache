@@ -2,22 +2,19 @@ const core = require('cyberway-core-service');
 const BasicConnector = core.services.Connector;
 const env = require('../data/env');
 const CacheController = require('../controllers/Cache');
-const CacheService = require('../services/Cache');
 
 class Connector extends BasicConnector {
     constructor() {
         super();
 
-        const cacheService = new CacheService();
-
-        this._cache = new CacheController({ connector: this, cacheService });
+        this._cache = new CacheController({ connector: this });
     }
 
     async start() {
         await super.start({
             serverRoutes: {
-                proxy: {
-                    handler: this._cache.proxy,
+                getEmbed: {
+                    handler: this._cache.getEmbed,
                     scope: this._cache,
                 },
             },
