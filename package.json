@@ -1,0 +1,25 @@
+{
+  "name": "embeds-cache",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cyberway-core-service": "^3.54.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/communcom/embeds-cache.git"
+  },
+  "author": "commun.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/communcom/embeds-cache/issues"
+  },
+  "homepage": "https://github.com/communcom/embeds-cache#readme",
+  "description": ""
+}
