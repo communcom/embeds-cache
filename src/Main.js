@@ -1,6 +1,5 @@
 const core = require('cyberway-core-service');
-const BasicMain = core.services.BasicMain;
-const { Logger } = core.utils;
+const { BasicMain } = core.services;
 const env = require('./data/env');
 const Connector = require('./services/Connector');
 

@@ -1,11 +1,10 @@
-const core = require('cyberway-core-service');
-const BasicController = core.controllers.Basic;
-const { Logger } = core.utils.Logger;
-const { encodeKey } = require('../utils/RedisKey');
-const env = require('../data/env');
-
 const Redis = require('ioredis');
 const fetch = require('node-fetch');
+const core = require('cyberway-core-service');
+const BasicController = core.controllers.Basic;
+const { Logger } = core.utils;
+const { encodeKey } = require('../utils/RedisKey');
+const env = require('../data/env');
 
 class Cache extends BasicController {
     constructor({ connector }) {
