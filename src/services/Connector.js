@@ -16,6 +16,20 @@ class Connector extends BasicConnector {
                 getEmbed: {
                     handler: this._cache.getEmbed,
                     scope: this._cache,
+                    validation: {
+                        required: ['url'],
+                        properties: {
+                            type: {
+                                type: 'string',
+                                enum: ['oembed', 'iframely'],
+                                default: 'oembed',
+                            },
+                            url: {
+                                type: 'string',
+                                minLength: 1,
+                            },
+                        },
+                    },
                 },
             },
             requiredClients: {
