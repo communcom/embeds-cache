@@ -100,6 +100,10 @@ class Cache extends BasicController {
             result.type = 'image';
         }
 
+        if (typeof result.providerName === 'string') {
+            result.providerName = result.providerName.toLowerCase();
+        }
+
         return result;
     }
 
