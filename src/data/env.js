@@ -6,4 +6,5 @@ module.exports = {
     GLS_REDIS_HOST: env.GLS_REDIS_HOST || '0.0.0.0',
     GLS_REDIS_PORT: env.GLS_REDIS_PORT || '6379',
     GLS_REDIS_PASSWORD: env.GLS_REDIS_PASSWORD || null,
+    GLS_WITHOUT_REDIS: Boolean(env.GLS_WITHOUT_REDIS) && env.GLS_WITHOUT_REDIS !== 'false',
 };
