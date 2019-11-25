@@ -92,6 +92,10 @@ class Cache extends BasicController {
             result[camelCase(keyName)] = originalResult[keyName];
         }
 
+        if (result.type === 'rich') {
+            result.type = 'embed';
+        }
+
         if (result.type === 'link') {
             result.type = 'website';
         }
