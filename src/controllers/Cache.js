@@ -108,6 +108,11 @@ class Cache extends BasicController {
             result.providerName = result.providerName.toLowerCase();
         }
 
+        // Fix urls without schema
+        if (result.thumbnailUrl && result.thumbnailUrl.startsWith('//')) {
+            result.thumbnailUrl = 'http:' + result.thumbnailUrl;
+        }
+
         return result;
     }
 
