@@ -1,0 +1,32 @@
+version: '2.1'
+services:
+  embeds-node:
+    container_name: embeds-node
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - services-tier
+    ports:
+      - $GLS_CONNECTOR_HOST:$GLS_CONNECTOR_PORT:$GLS_CONNECTOR_PORT
+      - $GLS_METRICS_HOST:$GLS_METRICS_PORT:$GLS_METRICS_PORT
+    env_file:
+      - .env
+  embeds-redis:
+    container_name: embeds-redis
+    image: 'bitnami/redis:5.0'
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    volumes:
+      - redis-data:/bitnami/redis/data
+    networks:
+      - services-tier
+
+volumes:
+  redis-data:
+
+networks:
+  services-tier:
